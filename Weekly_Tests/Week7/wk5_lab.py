@@ -57,6 +57,9 @@ class Student(Person):
             return self.home_address()
         else:
             return self.addresses[1]
+        
+    
+    ## you could extent this call to add additional enrollment requirements
 
 
 class CollegeProgramme:
