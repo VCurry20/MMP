@@ -23,6 +23,9 @@ class Customer:
     budget: float = 0.0
     shopping_list: List[ProductStock] = field(default_factory=list)
 
+
+    
+
 def create_and_stock_shop():
     s = Shop()
     with open('../stock.csv') as csv_file:

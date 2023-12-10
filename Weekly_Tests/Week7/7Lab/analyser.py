@@ -78,3 +78,19 @@ print("The average number is words / sentences", ("%.2f" % average))
 # sentences / paragraph
 avg_sen = (int(num_sentences) / int(num_paragraphs))
 print ("%.2f" % avg_sen)
+
+
+
+
+
+# OOP Solution
+
+class word():
+    pass
+
+class sentence():
+    pass
+
+class paragraph():
+    pass
+
