@@ -27,12 +27,12 @@ struct Customer {
 	int index;
 };
 
-// Function prototypes
+// Functions infile
 void display_menu();
 void purchase();
-void create_and_stock_shop();
-void print_product(product);
-void Customer read_customer();
+struct Shop create_and_stock_shop();
+void print_product (product);
+struct Customer read_customer();
 void print_customer(Customer);
 void print_shop(Shop);
 void shopping_basket(Customer, Shop);
@@ -176,29 +176,49 @@ void printShop(struct Shop s)
 }
 
 
-void total_cost(struct customer, struct Shop Product);
+void total_cost(struct Customer.product.shoppinglist, struct Shop Product);
 {
-    //printf("this is the cost function")
-    
-    cost =0.0
+
+    double cost =0.0
     // iterate through basked
-    for i in self.shopping_list:
+    for (i in Customer.shopping_list){
     // match the products with the shop products
-    shop_product = next((p for p in shop.stock if p.product.name == i.product.name), None)
+    shop_product = (p for p in shop.product if p.product.name == i.product.name);
     // work out the cost
         if shop_product:
         cost += i.quantity * shop_product.product.price
-        or else output an error message
+        // or else output an error message
         else:
-        printf("Product %c not found in the shop.", {i.product.name})
+        printf("Product %c not found in the shop.", {i.product.name})}
         
         return cost
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main(void) {
 
 display_menu();
+
 x = 6
 switch (x); 
 {
@@ -253,53 +273,57 @@ switch (x);
                 //set choice variable
                 choice = purchase()
                 // while choice is not 3
-                while choice != '3':
+                switch (){
+                while choice != '3';
                     // if choice is 1
-                    if choice == '1':
+                    if case == '1';
                         // print
-                        printf("Proceeding to purchase\n")
+                        printf("Proceeding to purchase\n");
                         // check if fund are available
-                        has_funds = check_budget(customer, price)
+                        has_funds = check_budget(customer, price);
                         if has_funds:
-                                # print
-                                print("Your starting budget was: €",customer["budget"])
-                                # new budget is update budget function calling customer and price
-                                nu_budget = update_budget(customer,price)
-                                # print
-                                print("Your new budget is: €", "%.2f" % nu_budget)
-                                # new cash is update cash function calling shop & price
-                                nu_cash = update_cash(shop,price)
-                                # print
-                                print("\nThe Shop's new cash balance is: €", "%.2f" % nu_cash)
-                                # print new line
-                                print("\n")
-                                # update stock - calling shopping & function
-                                update_stock(shopping, shop)
-                                # print new line
-                                print("\n")
-                                # print
-                                print("Returning to Main Menu")
+                                print("Your starting budget was: €",customer.budget);
+
+                                nu_budget = update_budget(customer,price);
+                                /// print
+                                printf("Your new budget is: €", "%.2f" % nu_budget);
+                                // new cash is update cash function calling shop & price
+                                nu_cash = update_cash(shop,price);
+                                // print
+                                printf("\nThe Shop's new cash balance is: €", "%.2f" % nu_cash);
+                                // print new line
+                                printf("\n");
+                                // update stock - calling shopping & function
+                                update_stock(shopping, shop);
+                                // print new line
+                                printf("\n");
+                                // print
+                                printf("Returning to Main Menu");
                                 break
                         else:{
                             // if not return
                             printf("Reverting to main menu");}
                             pass
 
-                    elif choice =='2':{
+                    elif case =='2':{
                         // change order
                         print("Input new order file - please choose option 3 on the main menu");
 					}
-                        break;  
+                        break;  }
 
                     else:
                         break
 
 
 	case 5:
-	// 
+    elif choice =='5':
+                printf("ran out of time");
+                
+ 
 	
 
 	case 6:
+     elif choice =='6':
 		printf("GoodBye");
 		break;
 
