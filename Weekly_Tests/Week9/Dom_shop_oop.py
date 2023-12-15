@@ -1,11 +1,13 @@
 import csv
 
 class Product:
-
+    # if no price is listed it will go to zero automatically - helpful when you do not know everthing
     def __init__(self, name, price=0):
         self.name = name
         self.price = price
     
+    # print rep
+    # product stock calls from this formatting too
     def __repr__(self):
         return f'NAME: {self.name} PRICE: {self.price}'
 
@@ -36,12 +38,15 @@ class ProductStock:
     # prints out product and quantity
     # takes product from product class
     # defaults to zero if nothing listed
+    # this relies on the product class and pulls from there
     def __repr__(self):
         return f"{self.product} QUANTITY: {self.quantity}"
 
 class Customer:
 
     def __init__(self, path):
+        # shopping list - customer csv pulled in here
+        # the proc it was in a def
         self.shopping_list = []
         with open(path) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
@@ -53,6 +58,7 @@ class Customer:
                 quantity = float(row[1])
                 p = Product(name)
                 ps = ProductStock(p, quantity)
+                # add this to the shopping list which is wthin this code
                 self.shopping_list.append(ps) 
                 
     def calculate_costs(self, price_list):
@@ -69,6 +75,7 @@ class Customer:
         
         return cost
     
+    # print rep
     def __repr__(self):
         
         str = f"{self.name} wants to buy"
@@ -106,6 +113,7 @@ class Shop:
         str += f'Shop has {self.cash} in cash\n'
         # take from the above self stock list
         for item in self.stock:
+            # this formatting comes from the product stock class
             str += f"{item}\n"
         return str
 
@@ -114,7 +122,7 @@ class Shop:
 # if there was no repr method in shop it would take it from its parent class
 # no parent class for shop
 # when there is no parent class ...who knows!?
-s = Shop("../stock.csv")
+s = Shop("stock.csv")
 #print(s)
 
 c = Customer("../customer.csv")
